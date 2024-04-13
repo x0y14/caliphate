@@ -1,0 +1,29 @@
+﻿title_succession_laws = {
+	cp_house_elective_succession_law = {
+		can_have = {
+			government_has_flag = government_is_clan
+			highest_held_title_tier >= tier_duchy
+		}
+		can_pass = {
+			can_change_title_law_trigger = yes
+			faith.religion = religion:islam_religion
+			any_held_title = { is_head_of_faith = yes }
+		}
+		can_title_have = {
+			can_title_have_law_general_trigger = yes
+			# this = prev.primary_title
+		}
+		succession = {
+			order_of_succession = election
+			election_type = cp_house_elective
+		}
+		flag = elective_succession_law
+		title_allegiance_opinion = 5
+		revoke_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+		pass_cost = {
+			prestige = change_title_succession_law_prestige_cost
+		}
+	}
+}

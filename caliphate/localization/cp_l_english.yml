@@ -1,0 +1,19 @@
+﻿l_english:
+  cp_house_elective_succession_law:1 "House Elective"
+  cp_house_elective_succession_law_subname:0 "Ahl al-Hal wal-'Aqd"
+  cp_house_elective_succession_law_effects:1 "The [ruler|E] and all [vassals|E] above the [rank|E] of [baron|E] can nominate a [title_heir|E] from among the members of the ruler's [house|E]. Vassals will tend to favor older."
+
+  cp_house_elective_candidates:0 "House Members"
+  cp_house_elective_candidates_tooltip:1 "All legitimate members of the current ruler's [dynasty|E] who are not in line to inherit a Theocracy or Republic and Same religion as the current ruler are valid candidates under House Elective."
+  cp_house_elective_electors:0 "$feudal_elective_electors$"
+  cp_house_elective_electors_tooltip:0 "In order to be a valid [elector|E] under House Elective, a vassal must fulfill all the following conditions:\n$EFFECT_LIST_BULLET$Be a vassal of the title"
+
+  tooltip_cp_vote_strength_strength_military_strength:0 "Military Influence: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_dread:0 "[dread|E]: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_legitimacy_level:0 "[legitimacy_level|E]: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_public_reputation:0 "Public Reputation: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_has_strong_hook:0 "Influence on current ruler: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_diarch:0 "[scales_of_power|E]: $VALUE|=+0$"
+
+  RELEASE_TRANSFER_HOF:0 "Transfer [head_of_faith|e]"
+  TRANSFER_HOF_NEGATIVE_REASON:0 "He will be Dethroned: $VALUE|=+0$"

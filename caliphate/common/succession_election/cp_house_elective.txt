@@ -1,0 +1,229 @@
+﻿cp_house_elective = {
+	# 選挙人の強さ
+	elector_vote_strength = {
+		base = 0
+		modifier = {
+			desc = tooltip_elective_current_ruler
+			add = {
+				value = 0
+				every_vassal = {
+					add = 1
+				}
+				divide = 3
+			}
+			this = scope:holder
+		}
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_public_reputation
+			add = {
+				value = 0
+				every_vassal = {
+					limit = {
+						opinion = {
+							target = scope:holder
+							value > 0
+						}
+					}
+					add = 1
+				}
+				every_vassal = {
+					limit = {
+						opinion = {
+							target = scope:holder
+							value < 25
+						}
+					}
+					add = -1
+				}
+			}
+			this = scope:holder
+		}
+		
+		modifier = { # Military Power of Vassal
+			desc = tooltip_cp_vote_strength_strength_military_strength
+			add = {
+				value = 0
+				if = { # Additional point if the vassal is more powerful than the current ruler.
+					limit = {
+						NOR = {
+							max_military_strength = 0
+							scope:holder.max_military_strength = 0
+						}
+						max_military_strength > scope:holder.max_military_strength
+					}
+					add = {
+						value = max_military_strength
+						subtract = scope:holder.max_military_strength
+						divide = 1000
+						multiply = 5
+					}
+				}
+				else = {
+					add = {
+						value = max_military_strength
+						divide = scope:holder.max_military_strength
+						multiply = 10
+					}
+				}
+			}
+			NOT = { this = scope:holder }
+			# is_powerful_vassal = yes
+			liege = scope:holder
+		}
+
+		modifier = { # 恐怖値が高いと影響力も高くなる
+			desc = tooltip_cp_vote_strength_strength_dread
+			dread >= 25
+			add = {
+				value = 0
+				if = {
+					limit = { # 25 ~ 50
+						dread >= 25
+						dread < 50
+					}
+					add = 1
+				}
+				else_if = {
+					limit = {
+						dread >= 50
+						dread < 75
+					}
+					add = 3
+				}
+				else = {
+					add = 5
+				}
+			}
+		}
+
+		modifier = { # Legitimacy Level
+			desc = tooltip_cp_vote_strength_strength_legitimacy_level
+			is_valid_for_legitimacy_change = yes
+			add = {
+				value = 0
+				if = {
+					limit = { legitimacy_level = 0 }
+					add = -10
+				}
+				if = {
+					limit = {
+						legitimacy_level <= 1
+					}
+					add = -5
+				}
+				if = {
+					limit = {
+						legitimacy_level >= 2
+					}
+					add = 1
+				}
+				if = {
+					limit = {
+						legitimacy_level >= 4
+					}
+					add = 3
+				}
+				if = {
+					limit = {
+						legitimacy_level >= 6
+					}
+					add = 5
+				}
+			}
+		}
+
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_has_strong_hook
+			add = 15
+			NOT = { this = scope:holder }
+			has_strong_hook = scope:holder
+		}
+
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_diarch
+			add = {
+				value = 0
+				if = {
+					limit = {
+						scope:holder = { has_active_diarchy = yes }
+					}
+					add = 10
+				}
+				if = {
+					limit = { diarchy_swing > 0 }
+					add = 1
+				}
+				if = {
+					limit = { diarchy_swing > 19 }
+					add = 2
+				}
+				if = {
+					limit = { diarchy_swing > 39 }
+					add = 3
+				}
+				if = {
+					limit = { diarchy_swing > 59 }
+					add = 4
+				}
+				if = {
+					limit = { diarchy_swing > 79 }
+					add = 5
+				}
+				if = {
+					limit = { diarchy_swing > 89 }
+					add = 6
+				}
+			}
+			NOT = { this = scope:holder }
+			scope:holder = { exists = diarch }
+			is_diarch_of_target = scope:holder
+		}
+
+		min = 1
+	}
+	# 選挙人
+	electors = {
+		add = holder
+		add = {
+			type = holder_direct_vassals
+			limit = {
+				# 身体的な特徴
+				is_adult = yes
+				NOT = { has_trait = incapable }
+			}
+		}
+	}
+	candidate_score = {
+		base = 0
+		######################	Elector self-voting pattern	##########################
+		elector_self_voting_pattern_feudal_elective_modifier = yes
+
+		##########################	Holder voting pattern	##########################
+		holder_voting_pattern_feudal_elective_modifier = yes
+
+		##########################	Elector voting patterns (circumstances)	##########################
+		# elector_voting_pattern_circumstances_feudal_elective_modifier = yes
+		# elector_voting_pattern_circumstances_scandinavian_elective_modifier = yes
+		elector_voting_pattern_circumstances_gaelic_elective_modifier = yes
+
+		##########################	Elector voting patterns (prestige/piety)	##########################
+		elector_voting_pattern_prestige_piety_feudal_elective_modifier = yes
+
+		##########################	Elector voting patterns (traits)	##########################
+		elector_voting_pattern_traits_feudal_elective_modifier = yes
+
+		##########################	Elector voting patterns (opinion)	##########################
+		elector_voting_pattern_opinion_feudal_elective_modifier = yes
+	}
+	#scope:candidate = Candidate, scope:title = Title, scope:holder_candidate = Candidate currently selected by ruler.
+	candidates = {
+		add = {
+			type = holder_dynasty
+			limit = {
+				house = scope:holder.house
+				faith = scope:holder.faith
+				feudal_elective_potential_landless_dynastic_candidate_trigger = yes
+			}
+		}
+	}
+}

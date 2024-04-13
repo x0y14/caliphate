@@ -1,0 +1,18 @@
+﻿on_game_start = {
+	on_actions = {
+		add_house_elective_succession_law_to_abbasid_empire_869
+	}
+}
+
+add_house_elective_succession_law_to_abbasid_empire_869 = {
+	trigger = {
+		has_fp3_dlc_trigger = yes
+		current_date = 867.1.1
+		exists = title:e_arabia.holder
+	}
+	effect = {
+		title:e_arabia = {
+			add_title_law = cp_house_elective_succession_law
+		}
+	}
+}
