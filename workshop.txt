@@ -1,0 +1,55 @@
+﻿[b]Although this mod contains many elements about Islam, the mod author is neither a Muslim nor an expert on Islam.
+The mod may contain false knowledge or misperceptions about Islam.
+However, it is not intended to demean or criticize Islam.
+If you find something that needs to be corrected, please let us know. I will correct it immediately.
+I apologize in advance.[/b]
+
+---
+[url=https://github.com/x0y14/caliphate] repo [/url]
+---
+
+Created to improve the behavior of the abbasid empire.
+[h2] Features [/h2]
+[list]
+	[*] Add "HouseMember Election"
+	[*] Add "Transfer HoF" (Prisoner Release Option)
+	[*] Adjustment Some Prisonor Interaction
+	[*] Adjustment Abduct Interaction
+	[*] Adjustment Challenge House Head Interaction
+[/list]
+
+[h2] TODO [/h2]
+The abbasid is too strong and will be adjusted.
+
+---
+[h2] HouseMember Election [/h2]
+[list]
+	[*] Candidates: Members of the House
+	[*] Electors  : direct vassals
+[/list]
+A person with Detractor Trait may select an inappropriate candidate in an election.
+Current rulers are given voting rights based on the number of vassals they have.
+If he is considered a good ruler by his vassals, his voting rights increase.
+Conversely, if the vassals perceive him to be a bad ruler, his voting rights are reduced.
+Vassals are given votes according to their military strength relative to the current ruler.
+Voting rights are increased or decreased depending on various factors, such as if the person is a horrible person, imprisons the current ruler, or is a regent of the current ruler.
+Commonly, legitimacy is considered important, and if it is low, voting rights are reduced.
+[b] The person elected will also take over the HoF and the patriarch's position from his/her predecessor. [/b]
+---
+[h2] Transfer HoF (Prisoner Release Option) [/h2]
+If the HoF is a HouseMember, "Transfer HoF" can be an option as a condition of bail.
+---
+[h2] Some Prisonor Interaction [/h2]
+The caliph's vassals will no longer release the caliph if he is imprisoned.
+Do not be caught by anyone who tries to control the caliphate.
+---
+[h2] Abduct Interaction [/h2]
+HouseMember of the Caliphate can attempt to abduct the Caliph.
+May attempt to strip the position.
+---
+[h2] Challenge House Head Interaction [/h2]
+If the patriarchal monarch is a house member, he may challenge you frequently.
+---
+[h2] Memo [/h2]
+Empire and HoF are linked together.
+Whoever takes Empire from you may automatically take HoF as well.
