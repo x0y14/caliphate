@@ -1520,6 +1520,12 @@
 			scope:actor.faith.religious_head ?= scope:recipient
 			add = -1000
 		}
+		# CP
+		modifier = {
+			scope:actor = { has_trait = fp3_struggle_detractor }
+			scope:recipient = { has_title = title:d_sunni }
+			add = -1000
+		}
 	}
 }
 
@@ -1965,6 +1971,13 @@ ransom_interaction = {
 			scope:recipient.faith = { has_doctrine = doctrine_temporal_head }
 			scope:recipient.faith.religious_head ?= scope:secondary_recipient
 			add = -100
+		}
+		# CP
+		modifier = {
+			desc = INTERACTION_DETRACTOR
+			scope:recipient = { has_trait = fp3_struggle_detractor }
+			scope:secondary_recipient = { has_title = title:d_sunni }
+			add = -1000
 		}
 	}
 	
@@ -2508,6 +2521,13 @@ ransom_me_interaction = {
 			scope:recipient.faith = { has_doctrine = doctrine_temporal_head }
 			scope:recipient.faith.religious_head ?= scope:actor
 			add = -100
+		}
+		# CP
+		modifier = {
+			desc = INTERACTION_DETRACTOR
+			scope:recipient = { has_trait = fp3_struggle_detractor }
+			scope:actor = { has_title = title:d_sunni }
+			add = -1000
 		}
 	}
 
