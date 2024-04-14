@@ -22,3 +22,8 @@
   TRANSFER_HOF_NEGATIVE_REASON:0 "He will be Dethroned: $VALUE|=+0$"
   YOU_ARE_RELIGIOUS_HEAD:0 "You are [head_of_faith|E]: $VALUE|=+0$"
   SHEHE_IS_RELIGIOUS_HEAD:0 "[secondary_recipient.GetSheHe] is [head_of_faith|E]: $VALUE|=+0$"
+
+  set_capital_baghdad_decision:0 "Reclaim Baghdad"
+  set_capital_baghdad_decision_confirm:0 "$set_capital_constantinople_decision_confirm$"
+  set_capital_baghdad_decision_desc:0 "Baghdad is the capital of the Arabian Empire and as such she rightfully belongs to me."
+  set_capital_baghdad_decision_tooltip:0 "Restore Baghdad as the capital of your Empire."
