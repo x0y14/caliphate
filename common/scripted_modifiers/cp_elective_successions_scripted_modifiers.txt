@@ -1,0 +1,73 @@
+﻿elector_voting_pattern_circumstances_house_elective_modifier = {
+	# unti-caliphate
+	modifier = {
+		desc = tooltip_house_elector_vote_want_to_weaken_caliphate
+		has_trait = fp3_struggle_detractor
+		add = {
+			value = 0
+			# 年齢
+			if = {
+				limit = { scope:candidate = { age < 16 } }
+				add = {
+					value = 100
+					subtract = scope:candidate.age
+					multiply = 20
+				}
+			}
+			# Legitimacy
+			if = {
+				limit = { is_valid_for_legitimacy_change = yes }
+				if = {
+					limit = { scope:candidate.legitimacy_level >= 6 }
+					add = -300
+				}
+				if = {
+					limit = { scope:candidate.legitimacy_level >= 4 }
+					add = -150
+				}
+				if = {
+					limit = { scope:candidate.legitimacy_level >= 3 }
+					add = -50
+				}
+				if = {
+					limit = { scope:candidate.legitimacy_level <= 2 }
+					add = 100
+				}
+				if = {
+					limit = { scope:candidate.legitimacy_level = 0 }
+					add = 300
+				}
+			}
+			# 罪Traits
+			if = {
+				limit = { scope:candidate.num_sinful_traits > 0 }
+				add = {
+					value = 100
+					multiply = scope:candidate.num_sinful_traits
+				}
+			}
+			# 信仰心
+			if = {
+				limit = { scope:candidate.piety_level < 2 }
+				add = {
+					value = 50
+					if = {
+						limit = { scope:candidate.piety_level < 1 }
+						add = 100
+					}
+				}
+			}
+			# 名誉
+			if = {
+				limit = { scope:candidate.prestige_level < 2 }
+				add = {
+					value = 50
+					if = {
+						limit = { scope:candidate.prestige_level < 1 }
+						add = 100
+					}
+				}
+			}
+		}
+	}
+}

@@ -223,6 +223,7 @@
 		# elector_voting_pattern_circumstances_feudal_elective_modifier = yes
 		# elector_voting_pattern_circumstances_scandinavian_elective_modifier = yes
 		elector_voting_pattern_circumstances_gaelic_elective_modifier = yes
+		elector_voting_pattern_circumstances_house_elective_modifier = yes # CP
 
 		##########################	Elector voting patterns (prestige/piety)	##########################
 		elector_voting_pattern_prestige_piety_feudal_elective_modifier = yes
