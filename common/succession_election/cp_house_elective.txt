@@ -193,7 +193,7 @@
 			NOT = { this = scope:holder }
 			scope:holder = {
 				is_imprisoned = yes
-				is_imprisoned_by = this
+				is_imprisoned_by = prev
 			}
 		}
 
