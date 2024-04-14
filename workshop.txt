@@ -13,9 +13,11 @@ Created to improve the behavior of the abbasid empire.
 [list]
 	[*] Add "HouseMember Election"
 	[*] Add "Transfer HoF" (Prisoner Release Option)
+	[*] Add Set Capital Baghdad Decision
 	[*] Adjustment Some Prisonor Interaction
 	[*] Adjustment Abduct Interaction
 	[*] Adjustment Challenge House Head Interaction
+	[*] Adjustment Persian Struggle Region
 [/list]
 
 [h2] TODO [/h2]
@@ -39,9 +41,13 @@ Commonly, legitimacy is considered important, and if it is low, voting rights ar
 [h2] Transfer HoF (Prisoner Release Option) [/h2]
 If the HoF is a HouseMember, "Transfer HoF" can be an option as a condition of bail.
 ---
+[h2] Set Capital Baghdad Decision [/h2]
+Arabian Emprie version of Reclaim Constantinople Decision
+---
 [h2] Some Prisonor Interaction [/h2]
 The caliph's vassals will no longer release the caliph if he is imprisoned.
 Do not be caught by anyone who tries to control the caliphate.
+In particular, someone with the characteristics of a Detractor will never release you and will try to manipulate your succession campaign.
 ---
 [h2] Abduct Interaction [/h2]
 HouseMember of the Caliphate can attempt to abduct the Caliph.
@@ -53,3 +59,7 @@ If the patriarchal monarch is a house member, he may challenge you frequently.
 [h2] Memo [/h2]
 Empire and HoF are linked together.
 Whoever takes Empire from you may automatically take HoF as well.
+---
+[h2] Adjustment Persian Struggle Region [/h2]
+Add Syria to Struggle Regions
+---
