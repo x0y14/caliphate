@@ -179,6 +179,24 @@
 			is_diarch_of_target = scope:holder
 		}
 
+		# holderが投獄されている
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_holder_imprisoned
+			add = -100
+			this = scope:holder
+			is_imprisoned = yes
+		}
+		# holderを投獄している
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_current_ruler_imprisoned
+			add = 100
+			NOT = { this = scope:holder }
+			scope:holder = {
+				is_imprisoned = yes
+				is_imprisoned_by = this
+			}
+		}
+
 		min = 1
 	}
 	# 選挙人

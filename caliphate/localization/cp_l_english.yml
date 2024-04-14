@@ -14,6 +14,8 @@
   tooltip_cp_vote_strength_strength_public_reputation:0 "Public Reputation: $VALUE|=+0$"
   tooltip_cp_vote_strength_strength_has_strong_hook:0 "Influence on current ruler: $VALUE|=+0$"
   tooltip_cp_vote_strength_strength_diarch:0 "[scales_of_power|E]: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_current_ruler_imprisoned:0 "Current ruler [imprisoning|E]: $VALUE|=+0$"
+  tooltip_cp_vote_strength_strength_holder_imprisoned:0 "[imprisoned|E]: $VALUE|=+0$"
 
   RELEASE_TRANSFER_HOF:0 "Transfer [head_of_faith|e]"
   TRANSFER_HOF_NEGATIVE_REASON:0 "He will be Dethroned: $VALUE|=+0$"
