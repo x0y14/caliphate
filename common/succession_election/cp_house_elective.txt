@@ -30,7 +30,7 @@
 					limit = {
 						opinion = {
 							target = scope:holder
-							value < 25
+							value < 0
 						}
 					}
 					add = -1
@@ -69,6 +69,32 @@
 			NOT = { this = scope:holder }
 			# is_powerful_vassal = yes
 			liege = scope:holder
+		}
+
+		modifier = {
+			desc = tooltip_cp_vote_strength_strength_public_reputation
+			NOT = { this = scope:holder }
+			add = {
+				value = 0
+				every_vassal = {
+					limit = {
+						opinion = {
+							target = prev
+							value > 0
+						}
+					}
+					add = 1
+				}
+				every_vassal = {
+					limit = {
+						opinion = {
+							target = prev
+							value < 25
+						}
+					}
+					add = -1
+				}
+			}
 		}
 
 		modifier = { # 恐怖値が高いと影響力も高くなる
