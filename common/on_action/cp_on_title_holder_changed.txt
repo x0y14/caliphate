@@ -25,7 +25,12 @@ hof_primary_title_holder_changed = {
 
 			root = {
 				every_held_title = {
-					limit = { is_head_of_faith = yes }
+					limit = {
+						OR = {
+							is_head_of_faith = yes
+							# this = title:d_baghdad
+						}
+					}
 					save_scope_as = title_to_transfer
 				}
 			}
@@ -74,7 +79,12 @@ on_house_election = {
 				}
 				root.faith.religious_head = {
 					every_held_title = {
-						limit = { is_head_of_faith = yes }
+						limit = {
+							OR = {
+								is_head_of_faith = yes
+								# this = title:d_baghdad
+							}
+						}
 						save_scope_as = title_to_transfer
 					}
 				}
@@ -97,8 +107,8 @@ on_house_election = {
 			if = {
 				limit = {
 					exists = title:c_baghdad.holder
-					title:c_baghdad.holder.house = root.house
-					title:c_baghdad.holder = { is_vassal_or_below_of = root }
+					# title:c_baghdad.holder.house = root.house
+					# title:c_baghdad.holder = { is_vassal_or_below_of = root }
 				}
 				root = { add_pressed_claim = title:c_baghdad }
 			}
@@ -106,10 +116,19 @@ on_house_election = {
 			if = {
 				limit = {
 					exists = title:c_samarra.holder
-					title:c_samarra.holder.house = root.house
-					title:c_samarra.holder = { is_vassal_or_below_of = root }
+					# title:c_samarra.holder.house = root.house
+					# title:c_samarra.holder = { is_vassal_or_below_of = root }
 				}
 				root = { add_pressed_claim = title:c_samarra }
+			}
+			# c_damascus
+			if = {
+				limit = {
+					exists = title:c_damascus.holder
+					# title:c_damascus.holder.house = root.house
+					# title:c_damascus.holder = { is_vassal_or_below_of = root }
+				}
+				root = { add_pressed_claim = title:c_damascus }
 			}
 		}
 	}
