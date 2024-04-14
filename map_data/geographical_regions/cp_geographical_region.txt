@@ -1,0 +1,5 @@
+﻿cp_ghw_region_syria = {
+	duchies = {
+		d_damascus d_aleppo d_antioch d_edessa d_homs d_lebanon d_palmyra
+	}
+}
