@@ -220,9 +220,10 @@
 			desc = tooltip_cp_vote_strength_strength_current_ruler_imprisoned
 			add = 100
 			NOT = { this = scope:holder }
-			scope:holder = {
-				is_imprisoned = yes
-				is_imprisoned_by = prev
+			has_variable_list = cp_imprisoning
+			is_target_in_variable_list = {
+				name = cp_imprisoning
+				target = scope:holder
 			}
 		}
 
