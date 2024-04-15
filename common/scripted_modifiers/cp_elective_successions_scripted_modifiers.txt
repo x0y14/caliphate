@@ -5,15 +5,6 @@
 		has_trait = fp3_struggle_detractor
 		add = {
 			value = 0
-			# 年齢
-			if = {
-				limit = { scope:candidate = { age < 16 } }
-				add = {
-					value = 100
-					subtract = scope:candidate.age
-					multiply = 20
-				}
-			}
 			# Legitimacy
 			if = {
 				limit = { is_valid_for_legitimacy_change = yes }
@@ -67,6 +58,14 @@
 						add = 100
 					}
 				}
+			}
+			# 自分に投票
+			if = {
+				limit = {
+					scope:candidate = this
+					is_available_adult = yes
+				}
+				add = 1000
 			}
 		}
 	}
