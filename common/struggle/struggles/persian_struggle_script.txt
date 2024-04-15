@@ -311,12 +311,14 @@
 					## You need to manually set/clear the "struggle_block_dissolution_faction" variable on affected titles instead.
 					### We do it this way to save a bit on performance.
 					caliph_cant_be_dissolutioned = yes
+					unlocks_abduct_for_all = yes # CP
 				}
 				involved_character_modifier = {
 					castle_holding_build_gold_cost = -0.3
 				}
 				interloper_parameters = {
 					less_dissolution_more_claimants = yes
+					unlocks_abduct_for_all = yes # CP
 				}
 			}
 
@@ -545,9 +547,11 @@
 					## You need to manually set/clear the "struggle_block_dissolution_faction" variable on affected titles instead.
 					### We do it this way to save a bit on performance.
 					caliph_cant_be_dissolutioned = yes
+					unlocks_abduct_for_all = yes # CP
 				}
 				interloper_parameters = {
 					less_dissolution_more_claimants = yes
+					unlocks_abduct_for_all = yes # CP
 				}
 			}
 

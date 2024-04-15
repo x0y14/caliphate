@@ -29,11 +29,13 @@
 			}
 			# CP
 			AND = {
-				house = scope:target.house
-				# faith = scope:target.faith
-				faith = { has_doctrine = doctrine_temporal_head }
-				faith.religious_head ?= scope:target
-				target_is_vassal_or_below = scope:target
+				any_character_struggle = {
+					is_struggle_type = persian_struggle
+					has_struggle_phase_parameter = unlocks_abduct_for_all
+					is_secondary_character_involvement_involved_trigger = {
+						CHAR = scope:target
+					}
+				}
 			}
 		}
 

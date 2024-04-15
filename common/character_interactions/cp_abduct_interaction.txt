@@ -23,12 +23,13 @@
 				}
 				# CP
 				AND = {
-					house = scope:recipient.house
-					# faith = scope:recipient.faith
-					faith = { has_doctrine = doctrine_temporal_head }
-					faith.religious_head ?= scope:recipient
-
-					scope:recipient.top_liege = scope:actor
+					any_character_struggle = {
+						is_struggle_type = persian_struggle
+						has_struggle_phase_parameter = unlocks_abduct_for_all
+						is_secondary_character_involvement_involved_trigger = {
+							CHAR = scope:recipient
+						}
+					}
 				}
 			}
 		}
