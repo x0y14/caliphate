@@ -18,8 +18,6 @@
   tooltip_cp_vote_strength_strength_holder_imprisoned:0 "[imprisoned|E]: $VALUE|=+0$"
   tooltip_house_elector_vote_want_to_weaken_caliphate:0 "I want to weaken Caliph: $VALUE|=+0$"
 
-  RELEASE_TRANSFER_HOF:0 "Transfer [head_of_faith|e]"
-  TRANSFER_HOF_NEGATIVE_REASON:0 "He will be Dethroned: $VALUE|=+0$"
   YOU_ARE_RELIGIOUS_HEAD:0 "You are [head_of_faith|E]: $VALUE|=+0$"
   SHEHE_IS_RELIGIOUS_HEAD:0 "[secondary_recipient.GetSheHe] is [head_of_faith|E]: $VALUE|=+0$"
 

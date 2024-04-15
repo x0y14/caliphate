@@ -327,30 +327,6 @@
 					}
 					release_as_executioner_effect = yes
 				}
-
-				# CP
-				# Transfer HoF
-				if = {
-					limit = { scope:transfer_hof = yes }
-					scope:recipient = {
-						every_held_title = {
-							limit = { is_head_of_faith = yes }
-							save_scope_as = title_to_transfer
-						}
-					}
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					scope:title_to_transfer = {
-						change_title_holder = {
-							holder = scope:actor
-							change = scope:change
-						}
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
 				
 				# No Demands Added
 				if = {
@@ -362,7 +338,6 @@
 						scope:take_vows = no
 						scope:become_executioner = no
 						scope:recruit = no
-						scope:transfer_hof = no # CP
 					}
 					# Notification to the imprisoner
 					scope:actor = {
@@ -975,18 +950,6 @@
 			}
 		}
 	}
-
-	# CP
-	send_option = {
-		flag = transfer_hof
-		localization = "RELEASE_TRANSFER_HOF"
-		is_shown = {
-			# scope:actor.faith = scope:recipient.faith
-			scope:actor.faith = { has_doctrine = doctrine_temporal_head }
-			scope:actor.faith.religious_head ?= scope:recipient
-			scope:actor.house = scope:recipient.house
-		}
-	}
 	
 	send_options_exclusive = no
 
@@ -997,7 +960,6 @@
 		scope:gain_hook = no
 		scope:take_vows = no
 		scope:recruit = no
-		scope:transfer_hof = no
 	}
 	
 	ai_accept = {
@@ -1190,75 +1152,6 @@
 					add = 200
 				}
 			}
-		}
-		# CP
-		modifier = {
-			trigger = { scope:transfer_hof = yes }
-			add = -200
-			desc = TRANSFER_HOF_NEGATIVE_REASON
-		}
-		modifier = { # IAM BABY
-			trigger = { scope:transfer_hof = yes }
-			add = 50
-			desc = AI_I_AM_A_BABY
-			scope:recipient = { child_is_infant_trigger = yes }
-		}
-		modifier = { # IAM CHILD
-			trigger = { scope:transfer_hof = yes }
-			add = 25
-			desc = AI_I_AM_A_CHILD
-			scope:recipient = { child_not_infant_trigger = yes }
-		}
-		modifier = { # IS infirm.
-			trigger = { scope:transfer_hof = yes }
-			add = 25
-			desc = AI_I_AM_INFIRM
-			scope:recipient = { has_trait = infirm }
-		}
-		modifier = { # IS infirm.
-			trigger = { scope:transfer_hof = yes }
-			add = 25
-			desc = AI_I_AM_INCAPABLE
-			scope:recipient = { has_trait = incapable }
-		}
-		modifier = {
-			trigger = { scope:transfer_hof = yes }
-			add = 50
-			desc = LIEGE_REASON
-			scope:recipient = { target_is_liege_or_above = scope:actor }
-		}
-		modifier = {
-			trigger = {
-				scope:transfer_hof = yes
-			}
-			scope:actor.max_military_strength > scope:recipient.max_military_strength
-			add = {
-				value = scope:actor.max_military_strength
-				subtract = scope:recipient.max_military_strength
-				divide = 1000
-				multiply = 5
-			}
-			desc = AI_MILITARY_BALANCE_REASON
-		}
-		modifier = {
-			trigger = {
-				scope:transfer_hof = yes
-			}
-			scope:actor.max_military_strength < scope:recipient.max_military_strength
-			add = -25
-			desc = AI_MILITARY_BALANCE_REASON
-		}
-		modifier = {
-			trigger = { scope:transfer_hof = yes }
-			scope:actor = scope:recipient.house.house_head
-			add = 15
-			desc = ET_AI_HOUSE_HEAD_REASON
-		}
-		modifier = {
-			trigger = { scope:transfer_hof = yes }
-			scope:actor = scope:recipient.dynasty.dynast
-			add = 15
-			desc = ET_AI_DYNAST_REASON
 		}
 	}
 	
@@ -1492,26 +1385,6 @@
 
 		evaluate_action_increasing_house_unity = {
 			VALUE = 100
-		}
-		# CP
-		modifier = {
-			scope:transfer_hof = yes
-			scope:actor = { is_available_adult = yes }
-			add = {
-				value = 50
-				if = {
-					limit = { scope:recipient = { is_vassal_or_below_of = scope:actor } }
-					add = 500
-				}
-				if = {
-					limit = { scope:actor.max_military_strength > scope:recipient.max_military_strength }
-					add = 50
-				}
-				if = {
-					limit = { scope:recipient = { is_available_adult = no } }
-					add = 500
-				}
-			}
 		}
 		# CP
 		modifier = {
