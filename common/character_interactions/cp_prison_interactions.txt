@@ -1843,6 +1843,7 @@ ransom_interaction = {
 			desc = SHEHE_IS_RELIGIOUS_HEAD
 			scope:recipient.faith = { has_doctrine = doctrine_temporal_head }
 			scope:recipient.faith.religious_head ?= scope:secondary_recipient
+			NOT = { scope:recipient = { has_trait = fp3_struggle_supporter } }
 			add = -100
 		}
 		# CP
@@ -2393,6 +2394,7 @@ ransom_me_interaction = {
 			desc = YOU_ARE_RELIGIOUS_HEAD
 			scope:recipient.faith = { has_doctrine = doctrine_temporal_head }
 			scope:recipient.faith.religious_head ?= scope:actor
+			NOT = { scope:actor = { has_trait = fp3_struggle_supporter } }
 			add = -100
 		}
 		# CP
