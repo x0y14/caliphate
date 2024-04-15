@@ -12,12 +12,12 @@ Created to improve the behavior of the abbasid empire.
 [h2] Features [/h2]
 [list]
 	[*] Add "HouseMember Election"
-	[*] Add "Transfer HoF" (Prisoner Release Option)
+	[*] Add "Dethrone Interaction"
 	[*] Add Set Capital Baghdad Decision
 	[*] Adjustment Some Prisonor Interaction
-	[*] Adjustment Abduct Interaction
 	[*] Adjustment Challenge House Head Interaction
 	[*] Adjustment Persian Struggle Region
+	[*] Adjustment Persian Struggle Parameters
 [/list]
 
 [h2] TODO [/h2]
@@ -38,8 +38,8 @@ Voting rights are increased or decreased depending on various factors, such as i
 Commonly, legitimacy is considered important, and if it is low, voting rights are reduced.
 [b] The person elected will also take over the HoF and the patriarch's position from his/her predecessor. [/b]
 ---
-[h2] Transfer HoF (Prisoner Release Option) [/h2]
-If the HoF is a HouseMember, "Transfer HoF" can be an option as a condition of bail.
+[h2] Dethrone Interaction [/h2]
+A vassal of the caliph who has imprisoned the caliph may dethrone the caliphate.
 ---
 [h2] Set Capital Baghdad Decision [/h2]
 Arabian Emprie version of Reclaim Constantinople Decision
@@ -47,19 +47,19 @@ Arabian Emprie version of Reclaim Constantinople Decision
 [h2] Some Prisonor Interaction [/h2]
 The caliph's vassals will no longer release the caliph if he is imprisoned.
 Do not be caught by anyone who tries to control the caliphate.
-In particular, someone with the characteristics of a Detractor will never release you and will try to manipulate your succession campaign.
----
-[h2] Abduct Interaction [/h2]
-HouseMember of the Caliphate can attempt to abduct the Caliph.
-May attempt to strip the position.
+In particular, someone with the characteristics of a Detractor will never release you and will try to manipulate your Successor Election.
 ---
 [h2] Challenge House Head Interaction [/h2]
 If the patriarchal monarch is a house member, he may challenge you frequently.
 ---
-[h2] Memo [/h2]
-Empire and HoF are linked together.
-Whoever takes Empire from you may automatically take HoF as well.
----
 [h2] Adjustment Persian Struggle Region [/h2]
 Add Syria to Struggle Regions
 ---
+[h2] Adjustment Persian Struggle Parameters [/h2]
+involved & interloper can use abduct interaction
+---
+---
+---
+[h2] Memo [/h2]
+Empire and HoF are linked together.
+Whoever takes Empire from you may automatically take HoF as well.
