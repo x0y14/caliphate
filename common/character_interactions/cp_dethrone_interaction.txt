@@ -88,13 +88,13 @@
 
 		# カリフデトラクターならやる
 		modifier = {
-			add = 1000
+			add = 10
 			scope:actor = { has_trait = fp3_struggle_detractor }
 		}
 
 		# カリフが借金してる
 		modifier = {
-			add = 100
+			add = 10
 			scope:recipient.gold < 0
 		}
 
@@ -105,11 +105,11 @@
 				value = 0
 				if = {
 					limit = { scope:recipient.legitimacy_level = 0 }
-					add = 100
+					add = 25
 				}
 				if = {
 					limit = { scope:recipient.legitimacy_level <= 2 }
-					add = 50
+					add = 10
 				}
 				if = {
 					limit = { scope:recipient.legitimacy_level >= 3 }
@@ -128,10 +128,50 @@
 
 		# イスラム系なのにサイイド持ってない
 		modifier = {
-			add = 100
+			add = 10
 			scope:recipient.faith = { religion = religion:islam_religion }
 			NOT = { scope:recipient = { has_trait = sayyid } }
 		}
+
+		# 後継者への評価
+		modifier = {
+			exists = scope:recipient.primary_heir
+			add = {
+				value = 0
+				if = {
+					limit = {
+						scope:recipient.primary_heir = { is_valid_for_legitimacy_change = yes }
+					}
+					if = {
+						limit = { scope:recipient.legitimacy_level = 0 }
+						add = -25
+					}
+					if = {
+						limit = { scope:recipient.legitimacy_level <= 2 }
+						add = -10
+					}
+					if = {
+						limit = { scope:recipient.legitimacy_level >= 3 }
+						add = 30
+					}
+					if = {
+						limit = { scope:recipient.legitimacy_level >= 4 }
+						add = 40
+					}
+					if = {
+						limit = { scope:recipient.legitimacy_level >= 5 }
+						add = 50
+					}
+				}
+			}
+		}
+		opinion_modifier = {
+			trigger = {
+				NOT = { scope:actor = scope:recipient }
+				exists = scope:recipient.primary_heir
+			}
+			opinion_target = scope:recipient.primary_heir
+		}
 	}
-	ai_frequency = 3
+	ai_frequency = 6
 }
