@@ -45,15 +45,15 @@
 				value = 0
 				if = { # Additional point if the vassal is more powerful than the current ruler.
 					limit = {
-						NOR = {
-							max_military_strength = 0
-							scope:holder.max_military_strength = 0
-						}
 						max_military_strength > scope:holder.max_military_strength
 					}
 					add = {
-						value = max_military_strength
-						subtract = scope:holder.max_military_strength
+						value = 0
+						add = {
+							value = max_military_strength
+							subtract = scope:holder.max_military_strength
+							min = 1
+						}
 						divide = 1000
 						multiply = 5
 					}
@@ -61,7 +61,10 @@
 				else = {
 					add = {
 						value = max_military_strength
-						divide = scope:holder.max_military_strength
+						divide = {
+							value = scope:holder.max_military_strength
+							min = 1
+						}
 						multiply = 10
 					}
 				}
