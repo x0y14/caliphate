@@ -27,3 +27,6 @@
   set_capital_baghdad_decision_confirm:0 "$set_capital_constantinople_decision_confirm$"
   set_capital_baghdad_decision_desc:0 "Baghdad is the capital of the Arabian Empire and as such she rightfully belongs to me."
   set_capital_baghdad_decision_tooltip:0 "Restore Baghdad as the capital of your Empire."
+
+  cp_dethrone_interaction:0 "Dethrone"
+  cp_dethrone_interaction_desc:0 "Dethrone [recipient.GetShortUINameNoTooltip], transfer power to [recipient.GetHerHis] successor"
