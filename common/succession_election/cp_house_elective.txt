@@ -177,27 +177,27 @@
 				}
 				if = {
 					limit = { diarchy_swing > 0 }
-					add = 1
-				}
-				if = {
-					limit = { diarchy_swing > 19 }
-					add = 2
-				}
-				if = {
-					limit = { diarchy_swing > 39 }
 					add = 3
 				}
 				if = {
-					limit = { diarchy_swing > 59 }
-					add = 4
-				}
-				if = {
-					limit = { diarchy_swing > 79 }
+					limit = { diarchy_swing > 19 }
 					add = 5
 				}
 				if = {
+					limit = { diarchy_swing > 39 }
+					add = 10
+				}
+				if = {
+					limit = { diarchy_swing > 59 }
+					add = 15
+				}
+				if = {
+					limit = { diarchy_swing > 79 }
+					add = 20
+				}
+				if = {
 					limit = { diarchy_swing > 89 }
-					add = 6
+					add = 30
 				}
 			}
 			NOT = { this = scope:holder }
