@@ -1,0 +1,33 @@
+﻿on_imprison = {
+	on_actions = {
+		cp_on_imprison
+	}
+}
+
+cp_on_imprison = {
+	effect = {
+		if = {
+			limit = {
+				root = { # 捕まった人
+					any_held_title = {
+						has_title_law = cp_house_elective_succession_law
+					}
+				}
+				# 捕まえた人が捕まった人の封臣である
+				scope:imprisoner = { is_vassal_or_below_of = root }
+			}
+			scope:imprisoner = { # 捕まえた人
+				add_to_variable_list = {
+					name = cp_imprisoning
+					target = root
+				}
+			}
+			scope:imprisoner = {
+				trigger_event = {
+					id = cp_events.0001
+					days = 30
+				}
+			}
+		}
+	}
+}

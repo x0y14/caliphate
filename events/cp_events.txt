@@ -1,0 +1,62 @@
+﻿namespace = cp_events
+
+cp_events.0001 = {
+	hidden = yes
+
+	trigger = {
+		has_variable_list = cp_imprisoning
+	}
+
+	immediate = {
+		every_in_list = {
+			variable = cp_imprisoning
+			save_scope_as = cp_prisoner
+			if = {
+				limit = {
+					OR = {
+						NOT = { scope:cp_prisoner = { is_alive = yes } }
+						NOT = { scope:cp_prisoner = { is_imprisoned = yes } }
+						NOT = { scope:cp_prisoner = { is_imprisoned_by = root } }
+						NOT = {
+							scope:cp_prisoner = {
+								any_held_title = {
+									has_title_law = cp_house_elective_succession_law
+								}
+							}
+						}
+						NOT = {
+							scope:cp_prisoner = {
+								is_liege_or_above_of = root
+							}
+						}
+					}
+				}
+				root = {
+					remove_list_variable = {
+						name = cp_imprisoning
+						target = scope:cp_prisoner
+					}
+				}
+			}
+		}
+		# もしまだ囚人がいるなら来月もチェック
+		if = {
+			limit = {
+				any_in_list = {
+					variable = cp_imprisoning
+					count > 0
+				}
+			}
+			trigger_event = {
+				id = cp_events.0001
+				days = 30
+			}
+		}
+		else = {
+			clear_variable_list = cp_imprisoning
+		}
+	}
+}
+# is_target_in_variable_list
+# every_in_list = {
+# 	variable = confronting_partners
